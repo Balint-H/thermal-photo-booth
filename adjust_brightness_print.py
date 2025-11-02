@@ -14,6 +14,7 @@ from PIL import Image, ImageEnhance
 
 OUTPUT_FILE = "processed_thermal.png"
 CAM_CAPTURE_FILE = "camera_capture.jpg"
+TEMP_FILE = "temp.png"
 
 def capture_photo():
     print("[+] Capturing photo with raspistill...")
@@ -26,7 +27,7 @@ def capture_photo():
         "-t", "1000"  # 1s capture time
     ]
 
-    subprocess.run(cmd, check=True)
+    subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     print(f"[+] Saved camera image to {CAM_CAPTURE_FILE}")
     return CAM_CAPTURE_FILE
 
@@ -35,16 +36,23 @@ def process_and_print(input_file, brightness):
     print(f"Loading {input_file}")
     img = Image.open(input_file).convert("RGB")
     print(f"Applying brightness = {brightness}")
-    img_enhanced = ImageEnhance.Brightness(img).enhance(brightness)
+    img = ImageEnhance.Brightness(img).enhance(brightness)
     
-    clean_img = Image.new(img_enhanced.mode, img_enhanced.size)
-    clean_img.paste(img_enhanced, (0, 0))
-
-    clean_img.save(OUTPUT_FILE)
+    print(f"Saving temporary PIL-processed file as {TEMP_FILE}...")
+    # Save the processed image from PIL to a temporary file
+    img_enhanced.save(TEMP_FILE, "PNG")
+    
+    print(f"Stripping metadata with ImageMagick...")
+    cmd = [
+        "convert",
+        TEMP_FILE,
+        "-strip",  
+        OUTPUT_FILE
+    ]
     
     img.save(OUTPUT_FILE)
     print(f"Saved processed image as {OUTPUT_FILE}")
-    subprocess.run(["lp", OUTPUT_FILE], check=True)
+    subprocess.run(["lp", OUTPUT_FILE], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     print("Printed submitted")
 
 
