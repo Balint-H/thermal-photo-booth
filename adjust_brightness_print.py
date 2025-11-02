@@ -35,11 +35,16 @@ def process_and_print(input_file, brightness):
     print(f"Loading {input_file}")
     img = Image.open(input_file).convert("RGB")
     print(f"Applying brightness = {brightness}")
-    img = ImageEnhance.Brightness(img).enhance(brightness)
+    img_enhanced = ImageEnhance.Brightness(img).enhance(brightness)
+    
+    clean_img = Image.new(img_enhanced.mode, img_enhanced.size)
+    clean_img.paste(img_enhanced, (0, 0))
+
+    clean_img.save(OUTPUT_FILE)
+    
     img.save(OUTPUT_FILE)
     print(f"Saved processed image as {OUTPUT_FILE}")
     subprocess.run(["lp", OUTPUT_FILE], check=True)
-    subprocess.run(["printf", "\n\n\n\x1b@"], check=True)
     print("Printed submitted")
 
 
