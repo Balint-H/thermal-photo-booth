@@ -39,6 +39,7 @@ def process_and_print(input_file, brightness):
     img.save(OUTPUT_FILE)
     print(f"Saved processed image as {OUTPUT_FILE}")
     subprocess.run(["lp", OUTPUT_FILE], check=True)
+    subprocess.run(["printf", "\n\n\n\x1b@"], check=True)
     print("Printed submitted")
 
 
