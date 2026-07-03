@@ -4,9 +4,12 @@ import os
 import cups
 from PIL import Image, ImageEnhance
 import picamera
+from gpiozero import PWMLED  # Added for MOSFET control
 
 # Configuration
 SAVE_DIR = "print_history"
+LED_PIN = 18  # GPIO 18 (Physical Pin 12)
+
 if not os.path.exists(SAVE_DIR):
     os.makedirs(SAVE_DIR)
 
@@ -14,14 +17,36 @@ def capture_photo(wait_time):
     timestamp = time.strftime("%Y%m%d-%H%M%S")
     raw_path = os.path.join(SAVE_DIR, f"raw_{timestamp}.jpg")
     
+    # Initialize the PWM LED control
+    led = PWMLED(LED_PIN)
+    
+    print("[+] Signaling countdown: Flashing LED 3 times at low intensity...")
+    for _ in range(3):
+        led.value = 0.2  # 20% brightness
+        time.sleep(0.3)
+        led.value = 0.0  # Off
+        time.sleep(0.3)
+        
+    print("[+] Setting LED to high intensity for the photo...")
+    led.value = 1.0  # 100% brightness
+    
     print(f"[+] Initializing camera (Wait time: {wait_time}s)...")
-    with picamera.PiCamera() as camera:
-        # Using 1024x768 (binned mode) for better light sensitivity
-        camera.resolution = (1024, 768)        
-        camera.start_preview()
-        time.sleep(wait_time) 
-        camera.capture(raw_path)
-        print(f"[+] Photo captured: {raw_path}")
+    try:
+        with picamera.PiCamera() as camera:
+            # Using 1024x768 (binned mode) for better light sensitivity
+            camera.resolution = (1024, 768)        
+            camera.start_preview()
+            
+            # The camera uses this sleep time to auto-adjust exposure to the 100% brightness level
+            time.sleep(wait_time) 
+            
+            camera.capture(raw_path)
+            print(f"[+] Photo captured: {raw_path}")
+    finally:
+        # Turn off the LED and clean up the GPIO pin even if the camera fails
+        led.value = 0.0
+        led.close()
+        
     return raw_path
 
 def process_and_print(input_file, brightness):
