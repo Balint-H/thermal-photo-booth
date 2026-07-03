@@ -3,7 +3,9 @@ name = "thermal-photo-booth"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.9"
 dependencies = [
-    "pillow>=12.0.0",
+    "picamera>=1.13",
+    "pillow>=11.3.0",
+    "pycups>=2.0.4",
 ]

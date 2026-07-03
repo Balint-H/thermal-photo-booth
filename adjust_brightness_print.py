@@ -1,78 +1,90 @@
-"""
-Usage:
-    python3 thermal_print.py image.png 1.2
-    python3 thermal_print.py photo 1.2   # take photo via raspistill
-
-Brightness example:
-    1.2 = 20% brighter
-    0.8 = darker
-"""
-
-import sys
-import subprocess
+import argparse
+import time
+import os
+import cups
 from PIL import Image, ImageEnhance
+import picamera
 
-OUTPUT_FILE = "processed_thermal.png"
-CAM_CAPTURE_FILE = "camera_capture.jpg"
-TEMP_FILE = "temp.png"
+# Configuration
+SAVE_DIR = "print_history"
+if not os.path.exists(SAVE_DIR):
+    os.makedirs(SAVE_DIR)
 
-def capture_photo():
-    print("[+] Capturing photo with raspistill...")
-
-    cmd = [
-        "raspistill",
-        "-o", CAM_CAPTURE_FILE,
-        "-w", "1280",
-        "-h", "720",
-        "-t", "1000"  # 1s capture time
-    ]
-
-    subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    print(f"[+] Saved camera image to {CAM_CAPTURE_FILE}")
-    return CAM_CAPTURE_FILE
-
+def capture_photo(wait_time):
+    timestamp = time.strftime("%Y%m%d-%H%M%S")
+    raw_path = os.path.join(SAVE_DIR, f"raw_{timestamp}.jpg")
+    
+    print(f"[+] Initializing camera (Wait time: {wait_time}s)...")
+    with picamera.PiCamera() as camera:
+        # Using 1024x768 (binned mode) for better light sensitivity
+        camera.resolution = (1024, 768)        
+        camera.start_preview()
+        time.sleep(wait_time) 
+        camera.capture(raw_path)
+        print(f"[+] Photo captured: {raw_path}")
+    return raw_path
 
 def process_and_print(input_file, brightness):
-    print(f"Loading {input_file}")
-    img = Image.open(input_file).convert("RGB")
-    print(f"Applying brightness = {brightness}")
-    img = ImageEnhance.Brightness(img).enhance(brightness)
-    
-    print(f"Saving temporary PIL-processed file as {TEMP_FILE}...")
-    # Save the processed image from PIL to a temporary file
-    img_enhanced.save(TEMP_FILE, "PNG")
-    
-    print(f"Stripping metadata with ImageMagick...")
-    cmd = [
-        "convert",
-        TEMP_FILE,
-        "-strip",  
-        OUTPUT_FILE
-    ]
-    
-    img.save(OUTPUT_FILE)
-    print(f"Saved processed image as {OUTPUT_FILE}")
-    subprocess.run(["lp", OUTPUT_FILE], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    print("Printed submitted")
+    timestamp = time.strftime("%Y%m%d-%H%M%S")
+    processed_path = os.path.join(SAVE_DIR, f"print_{timestamp}.jpg")
 
+    print(f"[+] Applying brightness ({brightness})")
+    img = Image.open(input_file)
+    
+    # Simple brightness adjustment
+    enhancer = ImageEnhance.Brightness(img)
+    img_enhanced = enhancer.enhance(brightness)
+    
+    img_enhanced.save(processed_path, quality=90)
+
+    # Print via pycups
+    conn = cups.Connection()
+    printers = conn.getPrinters()
+    
+    if not printers:
+        print("[-] Error: No printers found.")
+        return None
+
+    # Use the ZJ-80 or first available printer
+    printer_name = "ZJ-80" if "ZJ-80" in printers else list(printers.keys())[0]
+    
+    print(f"[+] Sending to printer: {printer_name}")
+    conn.printFile(printer_name, processed_path, f"Job_{timestamp}", {})
+    
+    return processed_path
 
 def main():
-    if len(sys.argv) < 3:
-        print("Usage:")
-        print("  python3 thermal_print.py image.png brightness")
-        print("  python3 thermal_print.py photo brightness")
-        sys.exit(1)
+    parser = argparse.ArgumentParser(description="Thermal Printer Photo Booth")
+    
+    # Positional argument: 'photo' or a file path
+    parser.add_argument('source', type=str, 
+                        help="Set to 'photo' to capture, or provide a path to an existing .jpg")
+    
+    # Optional arguments
+    parser.add_argument('--brightness', type=float, default=1.0, 
+                        help="Brightness multiplier (e.g., 1.5 to brighten). Default is 1.0")
+    
+    parser.add_argument('--wait', type=float, default=2.0, 
+                        help="Seconds to wait for camera sensor to adjust (warm-up). Default is 2.0")
 
-    source = sys.argv[1]
-    brightness = float(sys.argv[2])
+    args = parser.parse_args()
 
-    if source.lower() == "photo":
-        input_file = capture_photo()
-    else:
-        input_file = source
+    try:
+        if args.source.lower() == "photo":
+            input_file = capture_photo(args.wait)
+        else:
+            input_file = args.source
 
-    process_and_print(input_file, brightness)
+        if not os.path.exists(input_file):
+            print(f"[-] Error: File {input_file} not found.")
+            return
 
+        final_file = process_and_print(input_file, args.brightness)
+        if final_file:
+            print(f"[+] Success! File stored at {final_file}")
+        
+    except Exception as e:
+        print(f"[-] An error occurred: {e}")
 
 if __name__ == "__main__":
     main()
