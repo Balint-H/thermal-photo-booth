@@ -23,9 +23,9 @@ def capture_photo(wait_time):
     print("[+] Signaling countdown: Flashing LED 3 times at low intensity...")
     for _ in range(3):
         led.value = 0.2  # 20% brightness
-        time.sleep(0.3)
+        time.sleep(0.4)
         led.value = 0.0  # Off
-        time.sleep(0.3)
+        time.sleep(0.8)
         
     print("[+] Setting LED to high intensity for the photo...")
     led.value = 1.0  # 100% brightness
@@ -49,7 +49,7 @@ def capture_photo(wait_time):
         
     return raw_path
 
-def process_and_print(input_file, brightness):
+def process_and_print(input_file, brightness, contrast=0.8):
     timestamp = time.strftime("%Y%m%d-%H%M%S")
     processed_path = os.path.join(SAVE_DIR, f"print_{timestamp}.jpg")
 
@@ -57,7 +57,9 @@ def process_and_print(input_file, brightness):
     img = Image.open(input_file)
     
     # Simple brightness adjustment
-    enhancer = ImageEnhance.Brightness(img)
+    enhancer1 = ImageEnhance.Contrast(img)
+    img_enhanced = enhancer1.enhance(contrast)
+    enhancer = ImageEnhance.Brightness(img_enhanced)
     img_enhanced = enhancer.enhance(brightness)
     
     img_enhanced.save(processed_path, quality=90)

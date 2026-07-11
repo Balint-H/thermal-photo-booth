@@ -1,0 +1,295 @@
+import _frozen_importlib # frozen
+import _imp # builtin
+import sys # builtin
+import '_warnings' # <class '_frozen_importlib.BuiltinImporter'>
+import '_thread' # <class '_frozen_importlib.BuiltinImporter'>
+import '_weakref' # <class '_frozen_importlib.BuiltinImporter'>
+import '_frozen_importlib_external' # <class '_frozen_importlib.FrozenImporter'>
+import '_io' # <class '_frozen_importlib.BuiltinImporter'>
+import 'marshal' # <class '_frozen_importlib.BuiltinImporter'>
+import 'posix' # <class '_frozen_importlib.BuiltinImporter'>
+import _thread # previously loaded ('_thread')
+import '_thread' # <class '_frozen_importlib.BuiltinImporter'>
+import _weakref # previously loaded ('_weakref')
+import '_weakref' # <class '_frozen_importlib.BuiltinImporter'>
+# installing zipimport hook
+import 'zipimport' # <class '_frozen_importlib.BuiltinImporter'>
+# installed zipimport hook
+# /usr/lib/python3.5/encodings/__pycache__/__init__.cpython-35.pyc matches /usr/lib/python3.5/encodings/__init__.py
+# code object from '/usr/lib/python3.5/encodings/__pycache__/__init__.cpython-35.pyc'
+# /usr/lib/python3.5/__pycache__/codecs.cpython-35.pyc matches /usr/lib/python3.5/codecs.py
+# code object from '/usr/lib/python3.5/__pycache__/codecs.cpython-35.pyc'
+import '_codecs' # <class '_frozen_importlib.BuiltinImporter'>
+import 'codecs' # <_frozen_importlib_external.SourceFileLoader object at 0x76aaec90>
+# /usr/lib/python3.5/encodings/__pycache__/aliases.cpython-35.pyc matches /usr/lib/python3.5/encodings/aliases.py
+# code object from '/usr/lib/python3.5/encodings/__pycache__/aliases.cpython-35.pyc'
+import 'encodings.aliases' # <_frozen_importlib_external.SourceFileLoader object at 0x76abe530>
+import 'encodings' # <_frozen_importlib_external.SourceFileLoader object at 0x76aaea70>
+# /usr/lib/python3.5/encodings/__pycache__/utf_8.cpython-35.pyc matches /usr/lib/python3.5/encodings/utf_8.py
+# code object from '/usr/lib/python3.5/encodings/__pycache__/utf_8.cpython-35.pyc'
+import 'encodings.utf_8' # <_frozen_importlib_external.SourceFileLoader object at 0x76ac6f30>
+import '_signal' # <class '_frozen_importlib.BuiltinImporter'>
+# /usr/lib/python3.5/encodings/__pycache__/latin_1.cpython-35.pyc matches /usr/lib/python3.5/encodings/latin_1.py
+# code object from '/usr/lib/python3.5/encodings/__pycache__/latin_1.cpython-35.pyc'
+import 'encodings.latin_1' # <_frozen_importlib_external.SourceFileLoader object at 0x76aca530>
+# /usr/lib/python3.5/__pycache__/io.cpython-35.pyc matches /usr/lib/python3.5/io.py
+# code object from '/usr/lib/python3.5/__pycache__/io.cpython-35.pyc'
+# /usr/lib/python3.5/__pycache__/abc.cpython-35.pyc matches /usr/lib/python3.5/abc.py
+# code object from '/usr/lib/python3.5/__pycache__/abc.cpython-35.pyc'
+# /usr/lib/python3.5/__pycache__/_weakrefset.cpython-35.pyc matches /usr/lib/python3.5/_weakrefset.py
+# code object from '/usr/lib/python3.5/__pycache__/_weakrefset.cpython-35.pyc'
+import '_weakrefset' # <_frozen_importlib_external.SourceFileLoader object at 0x76acac10>
+import 'abc' # <_frozen_importlib_external.SourceFileLoader object at 0x76aca790>
+import 'io' # <_frozen_importlib_external.SourceFileLoader object at 0x76aca610>
+# /usr/lib/python3.5/__pycache__/_bootlocale.cpython-35.pyc matches /usr/lib/python3.5/_bootlocale.py
+# code object from '/usr/lib/python3.5/__pycache__/_bootlocale.cpython-35.pyc'
+import '_locale' # <class '_frozen_importlib.BuiltinImporter'>
+import '_bootlocale' # <_frozen_importlib_external.SourceFileLoader object at 0x76acfa70>
+Python 3.5.3 (default, Nov  4 2021, 15:29:10) 
+[GCC 6.3.0 20170516] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+# /usr/lib/python3.5/__pycache__/site.cpython-35.pyc matches /usr/lib/python3.5/site.py
+# code object from '/usr/lib/python3.5/__pycache__/site.cpython-35.pyc'
+# /usr/lib/python3.5/__pycache__/os.cpython-35.pyc matches /usr/lib/python3.5/os.py
+# code object from '/usr/lib/python3.5/__pycache__/os.cpython-35.pyc'
+import 'errno' # <class '_frozen_importlib.BuiltinImporter'>
+# /usr/lib/python3.5/__pycache__/stat.cpython-35.pyc matches /usr/lib/python3.5/stat.py
+# code object from '/usr/lib/python3.5/__pycache__/stat.cpython-35.pyc'
+import '_stat' # <class '_frozen_importlib.BuiltinImporter'>
+import 'stat' # <_frozen_importlib_external.SourceFileLoader object at 0x76ae7ed0>
+# /usr/lib/python3.5/__pycache__/posixpath.cpython-35.pyc matches /usr/lib/python3.5/posixpath.py
+# code object from '/usr/lib/python3.5/__pycache__/posixpath.cpython-35.pyc'
+# /usr/lib/python3.5/__pycache__/genericpath.cpython-35.pyc matches /usr/lib/python3.5/genericpath.py
+# code object from '/usr/lib/python3.5/__pycache__/genericpath.cpython-35.pyc'
+import 'genericpath' # <_frozen_importlib_external.SourceFileLoader object at 0x76aead90>
+import 'posixpath' # <_frozen_importlib_external.SourceFileLoader object at 0x76aea2d0>
+# /usr/lib/python3.5/__pycache__/_collections_abc.cpython-35.pyc matches /usr/lib/python3.5/_collections_abc.py
+# code object from '/usr/lib/python3.5/__pycache__/_collections_abc.cpython-35.pyc'
+import '_collections_abc' # <_frozen_importlib_external.SourceFileLoader object at 0x76a730d0>
+import 'os' # <_frozen_importlib_external.SourceFileLoader object at 0x76adeeb0>
+# /usr/lib/python3.5/__pycache__/_sitebuiltins.cpython-35.pyc matches /usr/lib/python3.5/_sitebuiltins.py
+# code object from '/usr/lib/python3.5/__pycache__/_sitebuiltins.cpython-35.pyc'
+import '_sitebuiltins' # <_frozen_importlib_external.SourceFileLoader object at 0x76ae10b0>
+# /usr/lib/python3.5/__pycache__/re.cpython-35.pyc matches /usr/lib/python3.5/re.py
+# code object from '/usr/lib/python3.5/__pycache__/re.cpython-35.pyc'
+# /usr/lib/python3.5/__pycache__/sre_compile.cpython-35.pyc matches /usr/lib/python3.5/sre_compile.py
+# code object from '/usr/lib/python3.5/__pycache__/sre_compile.cpython-35.pyc'
+import '_sre' # <class '_frozen_importlib.BuiltinImporter'>
+# /usr/lib/python3.5/__pycache__/sre_parse.cpython-35.pyc matches /usr/lib/python3.5/sre_parse.py
+# code object from '/usr/lib/python3.5/__pycache__/sre_parse.cpython-35.pyc'
+# /usr/lib/python3.5/__pycache__/sre_constants.cpython-35.pyc matches /usr/lib/python3.5/sre_constants.py
+# code object from '/usr/lib/python3.5/__pycache__/sre_constants.cpython-35.pyc'
+import 'sre_constants' # <_frozen_importlib_external.SourceFileLoader object at 0x76aa2090>
+import 'sre_parse' # <_frozen_importlib_external.SourceFileLoader object at 0x76a9b230>
+import 'sre_compile' # <_frozen_importlib_external.SourceFileLoader object at 0x76a938f0>
+# /usr/lib/python3.5/__pycache__/copyreg.cpython-35.pyc matches /usr/lib/python3.5/copyreg.py
+# code object from '/usr/lib/python3.5/__pycache__/copyreg.cpython-35.pyc'
+import 'copyreg' # <_frozen_importlib_external.SourceFileLoader object at 0x76aa2b10>
+import 're' # <_frozen_importlib_external.SourceFileLoader object at 0x76a93110>
+# /usr/lib/python3.5/__pycache__/sysconfig.cpython-35.pyc matches /usr/lib/python3.5/sysconfig.py
+# code object from '/usr/lib/python3.5/__pycache__/sysconfig.cpython-35.pyc'
+import 'sysconfig' # <_frozen_importlib_external.SourceFileLoader object at 0x76aa2d50>
+# /usr/lib/python3.5/__pycache__/_sysconfigdata.cpython-35.pyc matches /usr/lib/python3.5/_sysconfigdata.py
+# code object from '/usr/lib/python3.5/__pycache__/_sysconfigdata.cpython-35.pyc'
+# /usr/lib/python3.5/plat-arm-linux-gnueabihf/__pycache__/_sysconfigdata_m.cpython-35.pyc matches /usr/lib/python3.5/plat-arm-linux-gnueabihf/_sysconfigdata_m.py
+# code object from '/usr/lib/python3.5/plat-arm-linux-gnueabihf/__pycache__/_sysconfigdata_m.cpython-35.pyc'
+import '_sysconfigdata_m' # <_frozen_importlib_external.SourceFileLoader object at 0x76a30bf0>
+import '_sysconfigdata' # <_frozen_importlib_external.SourceFileLoader object at 0x76a30a90>
+# /usr/lib/python3.5/__pycache__/types.cpython-35.pyc matches /usr/lib/python3.5/types.py
+# code object from '/usr/lib/python3.5/__pycache__/types.cpython-35.pyc'
+# /usr/lib/python3.5/__pycache__/functools.cpython-35.pyc matches /usr/lib/python3.5/functools.py
+# code object from '/usr/lib/python3.5/__pycache__/functools.cpython-35.pyc'
+import '_functools' # <class '_frozen_importlib.BuiltinImporter'>
+# /usr/lib/python3.5/collections/__pycache__/__init__.cpython-35.pyc matches /usr/lib/python3.5/collections/__init__.py
+# code object from '/usr/lib/python3.5/collections/__pycache__/__init__.cpython-35.pyc'
+# /usr/lib/python3.5/__pycache__/operator.cpython-35.pyc matches /usr/lib/python3.5/operator.py
+# code object from '/usr/lib/python3.5/__pycache__/operator.cpython-35.pyc'
+import '_operator' # <class '_frozen_importlib.BuiltinImporter'>
+import 'operator' # <_frozen_importlib_external.SourceFileLoader object at 0x76a5daf0>
+# /usr/lib/python3.5/__pycache__/keyword.cpython-35.pyc matches /usr/lib/python3.5/keyword.py
+# code object from '/usr/lib/python3.5/__pycache__/keyword.cpython-35.pyc'
+import 'keyword' # <_frozen_importlib_external.SourceFileLoader object at 0x76a61070>
+# /usr/lib/python3.5/__pycache__/heapq.cpython-35.pyc matches /usr/lib/python3.5/heapq.py
+# code object from '/usr/lib/python3.5/__pycache__/heapq.cpython-35.pyc'
+import '_heapq' # <class '_frozen_importlib.BuiltinImporter'>
+import 'heapq' # <_frozen_importlib_external.SourceFileLoader object at 0x76a61fb0>
+import 'itertools' # <class '_frozen_importlib.BuiltinImporter'>
+# /usr/lib/python3.5/__pycache__/reprlib.cpython-35.pyc matches /usr/lib/python3.5/reprlib.py
+# code object from '/usr/lib/python3.5/__pycache__/reprlib.cpython-35.pyc'
+import 'reprlib' # <_frozen_importlib_external.SourceFileLoader object at 0x76a674b0>
+import '_collections' # <class '_frozen_importlib.BuiltinImporter'>
+import 'collections' # <_frozen_importlib_external.SourceFileLoader object at 0x76a4c330>
+# /usr/lib/python3.5/__pycache__/weakref.cpython-35.pyc matches /usr/lib/python3.5/weakref.py
+# code object from '/usr/lib/python3.5/__pycache__/weakref.cpython-35.pyc'
+import 'weakref' # <_frozen_importlib_external.SourceFileLoader object at 0x76a67d50>
+import 'functools' # <_frozen_importlib_external.SourceFileLoader object at 0x76a3ae10>
+# /usr/lib/python3.5/collections/__pycache__/abc.cpython-35.pyc matches /usr/lib/python3.5/collections/abc.py
+# code object from '/usr/lib/python3.5/collections/__pycache__/abc.cpython-35.pyc'
+import 'collections.abc' # <_frozen_importlib_external.SourceFileLoader object at 0x76a447b0>
+import 'types' # <_frozen_importlib_external.SourceFileLoader object at 0x76a3a650>
+# /usr/lib/python3.5/__pycache__/sitecustomize.cpython-35.pyc matches /usr/lib/python3.5/sitecustomize.py
+# code object from '/usr/lib/python3.5/__pycache__/sitecustomize.cpython-35.pyc'
+import 'sitecustomize' # <_frozen_importlib_external.SourceFileLoader object at 0x76a3a570>
+import 'site' # <_frozen_importlib_external.SourceFileLoader object at 0x76ade330>
+# /usr/lib/python3/dist-packages/pygame/__pycache__/__init__.cpython-35.pyc matches /usr/lib/python3/dist-packages/pygame/__init__.py
+# code object from '/usr/lib/python3/dist-packages/pygame/__pycache__/__init__.cpython-35.pyc'
+import 'atexit' # <class '_frozen_importlib.BuiltinImporter'>
+# extension module 'pygame.base' loaded from '/usr/lib/python3/dist-packages/pygame/base.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.base' executed from '/usr/lib/python3/dist-packages/pygame/base.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.base' # <_frozen_importlib_external.ExtensionFileLoader object at 0x76a085d0>
+# extension module 'pygame.constants' loaded from '/usr/lib/python3/dist-packages/pygame/constants.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.constants' executed from '/usr/lib/python3/dist-packages/pygame/constants.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.constants' # <_frozen_importlib_external.ExtensionFileLoader object at 0x76a08710>
+# /usr/lib/python3/dist-packages/pygame/__pycache__/version.cpython-35.pyc matches /usr/lib/python3/dist-packages/pygame/version.py
+# code object from '/usr/lib/python3/dist-packages/pygame/__pycache__/version.cpython-35.pyc'
+import 'pygame.version' # <_frozen_importlib_external.SourceFileLoader object at 0x76a0d4b0>
+# extension module 'pygame.rect' loaded from '/usr/lib/python3/dist-packages/pygame/rect.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.rect' executed from '/usr/lib/python3/dist-packages/pygame/rect.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.rect' # <_frozen_importlib_external.ExtensionFileLoader object at 0x76a0d570>
+# /usr/lib/python3/dist-packages/pygame/__pycache__/compat.cpython-35.pyc matches /usr/lib/python3/dist-packages/pygame/compat.py
+# code object from '/usr/lib/python3/dist-packages/pygame/__pycache__/compat.cpython-35.pyc'
+import 'pygame.compat' # <_frozen_importlib_external.SourceFileLoader object at 0x76a0d790>
+# extension module 'pygame.rwobject' loaded from '/usr/lib/python3/dist-packages/pygame/rwobject.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.rwobject' executed from '/usr/lib/python3/dist-packages/pygame/rwobject.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.rwobject' # <_frozen_importlib_external.ExtensionFileLoader object at 0x76a0d8b0>
+# extension module 'pygame.surflock' loaded from '/usr/lib/python3/dist-packages/pygame/surflock.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.surflock' executed from '/usr/lib/python3/dist-packages/pygame/surflock.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.surflock' # <_frozen_importlib_external.ExtensionFileLoader object at 0x76a0db30>
+# /usr/lib/python3/dist-packages/pygame/__pycache__/colordict.cpython-35.pyc matches /usr/lib/python3/dist-packages/pygame/colordict.py
+# code object from '/usr/lib/python3/dist-packages/pygame/__pycache__/colordict.cpython-35.pyc'
+import 'pygame.colordict' # <_frozen_importlib_external.SourceFileLoader object at 0x76a0dc50>
+# extension module 'pygame.color' loaded from '/usr/lib/python3/dist-packages/pygame/color.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.color' executed from '/usr/lib/python3/dist-packages/pygame/color.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.color' # <_frozen_importlib_external.ExtensionFileLoader object at 0x76a0dbb0>
+# extension module 'pygame.bufferproxy' loaded from '/usr/lib/python3/dist-packages/pygame/bufferproxy.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.bufferproxy' executed from '/usr/lib/python3/dist-packages/pygame/bufferproxy.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.bufferproxy' # <_frozen_importlib_external.ExtensionFileLoader object at 0x76a19790>
+# extension module 'pygame.math' loaded from '/usr/lib/python3/dist-packages/pygame/math.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.math' executed from '/usr/lib/python3/dist-packages/pygame/math.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.math' # <_frozen_importlib_external.ExtensionFileLoader object at 0x76a19830>
+# extension module 'pygame.cdrom' loaded from '/usr/lib/python3/dist-packages/pygame/cdrom.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.cdrom' executed from '/usr/lib/python3/dist-packages/pygame/cdrom.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.cdrom' # <_frozen_importlib_external.ExtensionFileLoader object at 0x76a19950>
+# /usr/lib/python3/dist-packages/pygame/__pycache__/cursors.cpython-35.pyc matches /usr/lib/python3/dist-packages/pygame/cursors.py
+# code object from '/usr/lib/python3/dist-packages/pygame/__pycache__/cursors.cpython-35.pyc'
+import 'pygame.cursors' # <_frozen_importlib_external.SourceFileLoader object at 0x76a19ab0>
+# extension module 'pygame.surface' loaded from '/usr/lib/python3/dist-packages/pygame/surface.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.surface' executed from '/usr/lib/python3/dist-packages/pygame/surface.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.surface' # <_frozen_importlib_external.ExtensionFileLoader object at 0x76a19d90>
+# extension module 'pygame.display' loaded from '/usr/lib/python3/dist-packages/pygame/display.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.display' executed from '/usr/lib/python3/dist-packages/pygame/display.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.display' # <_frozen_importlib_external.ExtensionFileLoader object at 0x76a19cb0>
+# extension module 'pygame.draw' loaded from '/usr/lib/python3/dist-packages/pygame/draw.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.draw' executed from '/usr/lib/python3/dist-packages/pygame/draw.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.draw' # <_frozen_importlib_external.ExtensionFileLoader object at 0x76a19fb0>
+# extension module 'pygame.event' loaded from '/usr/lib/python3/dist-packages/pygame/event.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.event' executed from '/usr/lib/python3/dist-packages/pygame/event.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.event' # <_frozen_importlib_external.ExtensionFileLoader object at 0x76a290f0>
+# extension module 'pygame.imageext' loaded from '/usr/lib/python3/dist-packages/pygame/imageext.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.imageext' executed from '/usr/lib/python3/dist-packages/pygame/imageext.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.imageext' # <_frozen_importlib_external.ExtensionFileLoader object at 0x76a29290>
+# extension module 'pygame.image' loaded from '/usr/lib/python3/dist-packages/pygame/image.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.image' executed from '/usr/lib/python3/dist-packages/pygame/image.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.image' # <_frozen_importlib_external.ExtensionFileLoader object at 0x76a291d0>
+# extension module 'pygame.joystick' loaded from '/usr/lib/python3/dist-packages/pygame/joystick.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.joystick' executed from '/usr/lib/python3/dist-packages/pygame/joystick.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.joystick' # <_frozen_importlib_external.ExtensionFileLoader object at 0x76a292f0>
+# extension module 'pygame.key' loaded from '/usr/lib/python3/dist-packages/pygame/key.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.key' executed from '/usr/lib/python3/dist-packages/pygame/key.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.key' # <_frozen_importlib_external.ExtensionFileLoader object at 0x76a29390>
+# extension module 'pygame.mouse' loaded from '/usr/lib/python3/dist-packages/pygame/mouse.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.mouse' executed from '/usr/lib/python3/dist-packages/pygame/mouse.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.mouse' # <_frozen_importlib_external.ExtensionFileLoader object at 0x76a293f0>
+# /usr/lib/python3/dist-packages/pygame/__pycache__/sprite.cpython-35.pyc matches /usr/lib/python3/dist-packages/pygame/sprite.py
+# code object from '/usr/lib/python3/dist-packages/pygame/__pycache__/sprite.cpython-35.pyc'
+# extension module 'pygame.time' loaded from '/usr/lib/python3/dist-packages/pygame/time.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.time' executed from '/usr/lib/python3/dist-packages/pygame/time.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.time' # <_frozen_importlib_external.ExtensionFileLoader object at 0x758a1a70>
+# extension module 'pygame.mask' loaded from '/usr/lib/python3/dist-packages/pygame/mask.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.mask' executed from '/usr/lib/python3/dist-packages/pygame/mask.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.mask' # <_frozen_importlib_external.ExtensionFileLoader object at 0x758a1b90>
+import 'pygame.sprite' # <_frozen_importlib_external.SourceFileLoader object at 0x76a294b0>
+# /usr/lib/python3/dist-packages/pygame/threads/__pycache__/__init__.cpython-35.pyc matches /usr/lib/python3/dist-packages/pygame/threads/__init__.py
+# code object from '/usr/lib/python3/dist-packages/pygame/threads/__pycache__/__init__.cpython-35.pyc'
+# /usr/lib/python3.5/__pycache__/traceback.cpython-35.pyc matches /usr/lib/python3.5/traceback.py
+# code object from '/usr/lib/python3.5/__pycache__/traceback.cpython-35.pyc'
+# /usr/lib/python3.5/__pycache__/linecache.cpython-35.pyc matches /usr/lib/python3.5/linecache.py
+# code object from '/usr/lib/python3.5/__pycache__/linecache.cpython-35.pyc'
+# /usr/lib/python3.5/__pycache__/tokenize.cpython-35.pyc matches /usr/lib/python3.5/tokenize.py
+# code object from '/usr/lib/python3.5/__pycache__/tokenize.cpython-35.pyc'
+# /usr/lib/python3.5/__pycache__/token.cpython-35.pyc matches /usr/lib/python3.5/token.py
+# code object from '/usr/lib/python3.5/__pycache__/token.cpython-35.pyc'
+import 'token' # <_frozen_importlib_external.SourceFileLoader object at 0x758b8c10>
+import 'tokenize' # <_frozen_importlib_external.SourceFileLoader object at 0x758abdd0>
+import 'linecache' # <_frozen_importlib_external.SourceFileLoader object at 0x758abc70>
+import 'traceback' # <_frozen_importlib_external.SourceFileLoader object at 0x758ab470>
+# /usr/lib/python3.5/__pycache__/queue.cpython-35.pyc matches /usr/lib/python3.5/queue.py
+# code object from '/usr/lib/python3.5/__pycache__/queue.cpython-35.pyc'
+# /usr/lib/python3.5/__pycache__/threading.cpython-35.pyc matches /usr/lib/python3.5/threading.py
+# code object from '/usr/lib/python3.5/__pycache__/threading.cpython-35.pyc'
+import 'time' # <class '_frozen_importlib.BuiltinImporter'>
+import 'threading' # <_frozen_importlib_external.SourceFileLoader object at 0x758c9630>
+import 'queue' # <_frozen_importlib_external.SourceFileLoader object at 0x758b4410>
+import 'pygame.threads' # <_frozen_importlib_external.SourceFileLoader object at 0x758a1dd0>
+# extension module 'pygame.pixelcopy' loaded from '/usr/lib/python3/dist-packages/pygame/pixelcopy.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.pixelcopy' executed from '/usr/lib/python3/dist-packages/pygame/pixelcopy.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.pixelcopy' # <_frozen_importlib_external.ExtensionFileLoader object at 0x758ab3d0>
+# extension module 'pygame.pixelarray' loaded from '/usr/lib/python3/dist-packages/pygame/pixelarray.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.pixelarray' executed from '/usr/lib/python3/dist-packages/pygame/pixelarray.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.pixelarray' # <_frozen_importlib_external.ExtensionFileLoader object at 0x758c94f0>
+# extension module 'pygame.overlay' loaded from '/usr/lib/python3/dist-packages/pygame/overlay.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.overlay' executed from '/usr/lib/python3/dist-packages/pygame/overlay.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.overlay' # <_frozen_importlib_external.ExtensionFileLoader object at 0x758c9c30>
+# extension module 'pygame.transform' loaded from '/usr/lib/python3/dist-packages/pygame/transform.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.transform' executed from '/usr/lib/python3/dist-packages/pygame/transform.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.transform' # <_frozen_importlib_external.ExtensionFileLoader object at 0x758d3390>
+# extension module 'pygame.font' loaded from '/usr/lib/python3/dist-packages/pygame/font.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.font' executed from '/usr/lib/python3/dist-packages/pygame/font.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.font' # <_frozen_importlib_external.ExtensionFileLoader object at 0x758d3450>
+# /usr/lib/python3/dist-packages/pygame/__pycache__/sysfont.cpython-35.pyc matches /usr/lib/python3/dist-packages/pygame/sysfont.py
+# code object from '/usr/lib/python3/dist-packages/pygame/__pycache__/sysfont.cpython-35.pyc'
+# /usr/lib/python3.5/__pycache__/subprocess.cpython-35.pyc matches /usr/lib/python3.5/subprocess.py
+# code object from '/usr/lib/python3.5/__pycache__/subprocess.cpython-35.pyc'
+# /usr/lib/python3.5/__pycache__/signal.cpython-35.pyc matches /usr/lib/python3.5/signal.py
+# code object from '/usr/lib/python3.5/__pycache__/signal.cpython-35.pyc'
+# /usr/lib/python3.5/__pycache__/enum.cpython-35.pyc matches /usr/lib/python3.5/enum.py
+# code object from '/usr/lib/python3.5/__pycache__/enum.cpython-35.pyc'
+import 'enum' # <_frozen_importlib_external.SourceFileLoader object at 0x757de070>
+import 'signal' # <_frozen_importlib_external.SourceFileLoader object at 0x757d5b90>
+# /usr/lib/python3.5/__pycache__/warnings.cpython-35.pyc matches /usr/lib/python3.5/warnings.py
+# code object from '/usr/lib/python3.5/__pycache__/warnings.cpython-35.pyc'
+import 'warnings' # <_frozen_importlib_external.SourceFileLoader object at 0x757d5c30>
+import '_posixsubprocess' # <class '_frozen_importlib.BuiltinImporter'>
+import 'select' # <class '_frozen_importlib.BuiltinImporter'>
+# /usr/lib/python3.5/__pycache__/selectors.cpython-35.pyc matches /usr/lib/python3.5/selectors.py
+# code object from '/usr/lib/python3.5/__pycache__/selectors.cpython-35.pyc'
+import 'math' # <class '_frozen_importlib.BuiltinImporter'>
+import 'selectors' # <_frozen_importlib_external.SourceFileLoader object at 0x757ea270>
+import 'subprocess' # <_frozen_importlib_external.SourceFileLoader object at 0x758d3c50>
+import 'pygame.sysfont' # <_frozen_importlib_external.SourceFileLoader object at 0x758d3510>
+# extension module 'pygame.mixer_music' loaded from '/usr/lib/python3/dist-packages/pygame/mixer_music.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.mixer_music' executed from '/usr/lib/python3/dist-packages/pygame/mixer_music.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.mixer_music' # <_frozen_importlib_external.ExtensionFileLoader object at 0x758d3b90>
+# extension module 'pygame.mixer' loaded from '/usr/lib/python3/dist-packages/pygame/mixer.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.mixer' executed from '/usr/lib/python3/dist-packages/pygame/mixer.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.mixer' # <_frozen_importlib_external.ExtensionFileLoader object at 0x758d3eb0>
+# extension module 'pygame.scrap' loaded from '/usr/lib/python3/dist-packages/pygame/scrap.cpython-35m-arm-linux-gnueabihf.so'
+# extension module 'pygame.scrap' executed from '/usr/lib/python3/dist-packages/pygame/scrap.cpython-35m-arm-linux-gnueabihf.so'
+import 'pygame.scrap' # <_frozen_importlib_external.ExtensionFileLoader object at 0x757d5610>
+# /usr/lib/python3/dist-packages/pygame/__pycache__/surfarray.cpython-35.pyc matches /usr/lib/python3/dist-packages/pygame/surfarray.py
+# code object from '/usr/lib/python3/dist-packages/pygame/__pycache__/surfarray.cpython-35.pyc'
+# /usr/lib/python3/dist-packages/pygame/__pycache__/_numpysurfarray.cpython-35.pyc matches /usr/lib/python3/dist-packages/pygame/_numpysurfarray.py
+# code object from '/usr/lib/python3/dist-packages/pygame/__pycache__/_numpysurfarray.cpython-35.pyc'
+# /usr/lib/python3/dist-packages/numpy/__pycache__/__init__.cpython-35.pyc matches /usr/lib/python3/dist-packages/numpy/__init__.py
+# code object from '/usr/lib/python3/dist-packages/numpy/__pycache__/__init__.cpython-35.pyc'
+# /usr/lib/python3.5/__pycache__/__future__.cpython-35.pyc matches /usr/lib/python3.5/__future__.py
+# code object from '/usr/lib/python3.5/__pycache__/__future__.cpython-35.pyc'
+import '__future__' # <_frozen_importlib_external.SourceFileLoader object at 0x757ff970>
+# /usr/lib/python3/dist-packages/numpy/__pycache__/_globals.cpython-35.pyc matches /usr/lib/python3/dist-packages/numpy/_globals.py
+# code object from '/usr/lib/python3/dist-packages/numpy/__pycache__/_globals.cpython-35.pyc'
+import 'numpy._globals' # <_frozen_importlib_external.SourceFileLoader object at 0x757ffdf0>
+# /usr/lib/python3/dist-packages/numpy/__pycache__/__config__.cpython-35.pyc matches /usr/lib/python3/dist-packages/numpy/__config__.py
+# code object from '/usr/lib/python3/dist-packages/numpy/__pycache__/__config__.cpython-35.pyc'
+import 'numpy.__config__' # <_frozen_importlib_external.SourceFileLoader object at 0x757ffeb0>
+# /usr/lib/python3/dist-packages/numpy/__pycache__/version.cpython-35.pyc matches /usr/lib/python3/dist-packages/numpy/version.py
+# code object from '/usr/lib/python3/dist-packages/numpy/__pycache__/version.cpython-35.pyc'

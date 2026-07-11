@@ -1,32 +1,31 @@
+import threading
 import time
 from signal import pause
 from gpiozero import Button
-# Import the functions from your original script (assumed to be photobooth.py)
+# Import the functions from your original script
 from adjust_brightness_print import capture_photo, process_and_print
 
 # Configuration
-BUTTON_PIN = 24  # Choose any available GPIO pin (e.g., GPIO 24, physical pin 18)
-DEBOUNCE_TIME = 0.3  # 300ms to ignore mechanical contact bounce
+BUTTON_PIN = 24  
+DEBOUNCE_TIME = 0.1  # 100ms is standard for a momentary switch
 IS_PROCESSING = False
 
 def run_photobooth_sequence():
     global IS_PROCESSING
     
-    # Debounce/State lock: Ignore triggers if a photo is already being processed
+    # This check now safely runs inside our background thread
     if IS_PROCESSING:
         print("[!] Photo booth is busy, ignoring trigger.")
         return
         
     IS_PROCESSING = True
-    print("\n[!] Photobooth triggered via switch state change!")
+    print("\n[!] Photobooth triggered!")
     
     try:
-        # Call functions from your original script
-        # You can customize your default wait time and brightness multipliers here
-        raw_file = capture_photo(wait_time=2.0)
+        raw_file = capture_photo(wait_time=1.5)
         
         if raw_file:
-            final_file = process_and_print(raw_file, brightness=1.0)
+            final_file = process_and_print(raw_file, brightness=2.5, contrast=0.6)
             if final_file:
                 print(f"[+] Sequence complete! Printed and saved to {final_file}")
                 
@@ -34,21 +33,23 @@ def run_photobooth_sequence():
         print(f"[-] Error running photobooth sequence: {e}")
         
     finally:
-        # Re-enable the button triggers once everything is finished
         print("[+] Ready for next trigger.")
         IS_PROCESSING = False
 
+def button_pressed_callback():
+    """
+    Spawns the heavy photobooth sequence in a separate thread.
+    This returns instantly, keeping the GPIO listener responsive.
+    """
+    threading.Thread(target=run_photobooth_sequence, daemon=True).start()
+
 # Setup the button
-# pull_up=True uses the Pi's internal 50k Ohm resistor to limit current draw to ~66uA when closed.
-# Wire one side of your latching switch to BUTTON_PIN, and the other side to a GND pin.
 button = Button(BUTTON_PIN, pull_up=True, bounce_time=DEBOUNCE_TIME)
 
-# Assign the exact same function to BOTH actions (rising and falling edges)
-button.when_pressed = run_photobooth_sequence
-button.when_released = run_photobooth_sequence
+# Bind the quick wrapper function, NOT the heavy blocking function
+button.when_pressed = button_pressed_callback
 
 print(f"[+] Switch listener active on GPIO {BUTTON_PIN}.")
 print("[+] Standing by... Press Ctrl+C to exit.")
 
-# Keep the script running efficiently in the background without burning CPU cycles
 pause()
