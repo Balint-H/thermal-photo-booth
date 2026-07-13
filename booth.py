@@ -1,55 +1,1 @@
-import threading
-import time
-from signal import pause
-from gpiozero import Button
-# Import the functions from your original script
-from adjust_brightness_print import capture_photo, process_and_print
-
-# Configuration
-BUTTON_PIN = 24  
-DEBOUNCE_TIME = 0.1  # 100ms is standard for a momentary switch
-IS_PROCESSING = False
-
-def run_photobooth_sequence():
-    global IS_PROCESSING
-    
-    # This check now safely runs inside our background thread
-    if IS_PROCESSING:
-        print("[!] Photo booth is busy, ignoring trigger.")
-        return
-        
-    IS_PROCESSING = True
-    print("\n[!] Photobooth triggered!")
-    
-    try:
-        raw_file = capture_photo(wait_time=1.5)
-        
-        if raw_file:
-            final_file = process_and_print(raw_file, brightness=2.5, contrast=0.6)
-            if final_file:
-                print(f"[+] Sequence complete! Printed and saved to {final_file}")
-                
-    except Exception as e:
-        print(f"[-] Error running photobooth sequence: {e}")
-        
-    finally:
-        print("[+] Ready for next trigger.")
-        IS_PROCESSING = False
-
-def button_pressed_callback():
-    """
-    Spawns the heavy photobooth sequence in a separate thread.
-    This returns instantly, keeping the GPIO listener responsive.
-    """
-    threading.Thread(target=run_photobooth_sequence, daemon=True).start()
-
-# Setup the button
-button = Button(BUTTON_PIN, pull_up=True, bounce_time=DEBOUNCE_TIME)
-
-# Bind the quick wrapper function, NOT the heavy blocking function
-button.when_pressed = button_pressed_callback
-
-print(f"[+] Switch listener active on GPIO {BUTTON_PIN}.")
-print("[+] Standing by... Press Ctrl+C to exit.")
-
-pause()
+import threadingimport timefrom signal import pausefrom gpiozero import Button# Import the functions from your original scriptfrom adjust_brightness_print import capture_photo, process_and_print, capture_three_strip# Configuration# NOTE: Make sure these are your BCM GPIO numbers, not physical pin numbers!BUTTON_PIN = 24BUTTON2_PIN = 25DEBOUNCE_TIME = 0.1  # 100ms debounceIS_PROCESSING = FalseBRIGHTNESS = 1.8CONTRAST = 0.8WAIT_TIME = 2.0SPEED_FACTOR = 2.def run_photobooth_sequence(do_triple=False):    global IS_PROCESSING    print(f"\n[!] Photobooth triggered! (Mode: {'Triple Strip' if do_triple else 'Single Photo'})")        try:        if not do_triple:            raw_file = capture_photo(wait_time=WAIT_TIME, speed_factor=SPEED_FACTOR)        else:            raw_file = capture_three_strip(wait_time=WAIT_TIME, speed_factor=SPEED_FACTOR)                if raw_file:            final_file = process_and_print(raw_file, brightness=BRIGHTNESS, contrast=CONTRAST)            if final_file:                print(f"[+] Sequence complete! Printed and saved to {final_file}")                    except Exception as e:        print(f"[-] Error running photobooth sequence: {e}")            finally:        print("[+] Ready for next trigger.")        IS_PROCESSING = Falsedef button_pressed_callback():    """Spawns single photo sequence only if the camera isn't busy."""    global IS_PROCESSING    if IS_PROCESSING:        print("[!] Photo booth is busy, ignoring trigger.")        return            IS_PROCESSING = True    threading.Thread(target=run_photobooth_sequence, kwargs={'do_triple': False}, daemon=True).start()def button2_pressed_callback():    """Spawns triple photo strip sequence only if the camera isn't busy."""    global IS_PROCESSING    if IS_PROCESSING:        print("[!] Photo booth is busy, ignoring trigger.")        return            IS_PROCESSING = True    threading.Thread(target=run_photobooth_sequence, kwargs={'do_triple': True}, daemon=True).start()# Setup the buttons (assumes buttons connect the GPIO pin to a GND pin)button = Button(BUTTON_PIN, pull_up=True, bounce_time=DEBOUNCE_TIME)button2 = Button(BUTTON2_PIN, pull_up=True, bounce_time=DEBOUNCE_TIME)# Bind the listener callbacksbutton.when_pressed = button_pressed_callbackbutton2.when_pressed = button2_pressed_callbackprint(f"[+] Switch listener active on BCM GPIO {BUTTON_PIN} and {BUTTON2_PIN}.")print("[+] Standing by... Press Ctrl+C to exit.")pause()
